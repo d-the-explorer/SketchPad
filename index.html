@@ -10,17 +10,41 @@
 </head>
 <body>
     <script>
+    let sunMove = 500
+    let red = 135
+    let green = 206
+    let blue = 260
     function setup(){
         createCanvas(1000,1000);
         background(135,206,260);
     }
 
     function draw(){
-        fill(193, 225, 193);
-        rect(0,500,1000,500);
+        background(red, green, blue);
         fill(254,238,133);
+        circle(500,sunMove,455)
+        fill(red+58, green+19, blue-67);
+        rect(0,500,1000,500);
 
+    }
 
+    function keyPressed(){
+        if(keyCode === 38){
+        sunMove -=3
+        red +=1
+        green +=1
+        blue +=1            
+        }
+
+        if(keyCode === 40 && green<206){
+          
+            sunMove +=3
+            red -=1
+            green -=1
+            blue -=1             
+         
+
+        }
     }
     </script>
 </body>
