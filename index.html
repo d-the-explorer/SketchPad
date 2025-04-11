@@ -14,6 +14,10 @@
     let red = 135
     let green = 206
     let blue = 260
+    let treeR =66
+    let treeG =59
+    let treeB = 36
+    
     function setup(){
         createCanvas(1000,1000);
         background(135,206,260);
@@ -25,20 +29,28 @@
         circle(500,sunMove,455)
         fill(red+58, green+19, blue-67);
         rect(0,500,1000,500);
-        fill('brown');
+        fill(treeR,treeG,treeB);
         rect( 100,500,200,200);
         rect(900,500,200,200);
-        ellipse(100,590,250,150);
-        ellipse(900,);
+        fill(treeR,treeG+100,treeB);
+        ellipse(150,490,250,150);
+        ellipse(653,452,250,150);
+        ellipse(292,214,250,150);
     }
 
     function keyPressed(){
         if(keyCode === UP_ARROW){
         sunMove -=3
-        red +=1
-        green +=1
-        blue +=1            
+            if (green<200) {
+                red +=1
+                green +=1
+                blue +=1           
+                
+            }
+
+           
         }
+
 
         if(keyCode === DOWN_ARROW){          
             sunMove +=3
@@ -48,6 +60,11 @@
         }
         
     }
+     
+    function mouseClicked(event) {
+  // Code to run that uses the event.
+  console.log(event);
+}
     </script>
 </body>
 </html>
